@@ -12,10 +12,10 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->string('email')->unique();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('middle_name');
-            $table->string('inn',12)->unique();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('middle_name')->nullable();
+            $table->string('inn',12)->nullable()->unique();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
